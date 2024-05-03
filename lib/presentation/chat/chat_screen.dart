@@ -20,6 +20,33 @@ class ChatScreen extends StatelessWidget {
         // Center the title in ANDROID
         centerTitle: true,
       ),
+      body: _ChatView(),
+    );
+  }
+}
+
+class _ChatView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // SafeArea widget to avoid the notch and the system bar
+    return SafeArea(
+      // Padding widget to add padding to the child
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        // Column widget to stack the children vertically
+        child: Column(
+          children: [
+            // Expanded widget to fill the available space
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 100,
+                  itemBuilder: (context, index) {
+                    return Text('Index: $index');
+                  }),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
