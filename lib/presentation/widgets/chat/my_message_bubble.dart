@@ -5,14 +5,21 @@ class MyMessageBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Define the colors
     final colors = Theme.of(context).colorScheme;
 
+    // Return the message bubble
     return Column(
+      // Align the message bubble to the right
       crossAxisAlignment: CrossAxisAlignment.end,
+      // Add the message bubble
       children: [
+        // Add the message bubble container
         Container(
+          // Add the decoration
           decoration: BoxDecoration(
               color: colors.primary, borderRadius: BorderRadius.circular(20)),
+          // Add the message
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
